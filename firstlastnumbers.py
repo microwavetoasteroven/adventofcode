@@ -1,6 +1,6 @@
 import re
 
-list_of_numbers = []
+total_of_numbers = 0
 
 def find_first_number(text):
     match = re.search(r'\d', text)
@@ -9,18 +9,10 @@ def find_first_number(text):
     else:
         return None
 
-def find_last_number(text):
-    matches = re.findall(r'\d', text)
-    if matches:
-        return matches[-1]
-    else:
-        return None
-
 def process_line(line):
-    first = find_first_number(line)
-    last = find_last_number(line)
-    combined = f"{first}{last}"
-    list_of_numbers.append(int(combined))
+    global total_of_numbers
+    combined = f"{find_first_number(line)}{find_first_number(line[::-1])}"
+    total_of_numbers += int(combined)
 
 def process_file(file_path):
     with open(file_path, 'r') as file:
@@ -30,6 +22,6 @@ def process_file(file_path):
 # Example usage
 file_path = 'numbers.txt'
 process_file(file_path)
-total = sum(list_of_numbers)
-print(total)
+print(total_of_numbers)
+
 
