@@ -28,7 +28,7 @@ def process_file(file_path):
             process_line(line)
 
 # Example usage
-file_path = 'numbers.yml'
+file_path = 'numbers.txt'
 process_file(file_path)
 total = sum(list_of_numbers)
 print(total)
