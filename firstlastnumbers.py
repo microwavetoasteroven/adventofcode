@@ -7,7 +7,7 @@ def find_first_number(text):
     if match:
         return match.group()
     else:
-        return None
+        return 0
 
 def process_line(line):
     global total_of_numbers
