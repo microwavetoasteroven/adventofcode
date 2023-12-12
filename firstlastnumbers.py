@@ -20,7 +20,6 @@ numbers_words_dict = {'one':1,
                       'owt':2,
                       'eno':1
                       }
-reverse = "one|two|three|four|five|six|seven|eight|nine"
 
 def find_first_number(text,first=True):
     last_pattern = re.compile(r'(\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin)',re.IGNORECASE)
